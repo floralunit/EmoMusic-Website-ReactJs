@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../styles/App.css';
 import '../styles/tabs.css';
+import {BandsTable} from "./BandsTable";
 
 export function MainPage() {
     const [toggleState, setToggleState] = useState(1);
@@ -91,140 +92,7 @@ export function MainPage() {
                     <div
                         className={toggleState === 3 ? "content  active-content" : "content"}
                     >
-                        <table className="table">
-                            <tbody>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td className="tdUp">
-                                            <p align="center"><b>Эмо 90-х</b></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a>Bob Tilton</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a>I Hate Myself</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a>Mineral</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a>Kolya</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a>Sleeping for Sunrise</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td className="tdUp">
-                                            <p align="center"><b>Мидвест-эмо</b></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/ian_dury.htm">American Football</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Camping in Alaska</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Marietta</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Tiny Moving Parts</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td className="tdUp">
-                                            <p align="center"><b>Русское эмо</b></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Bird Bone</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/ian_dury.htm">botanichesky sad</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">hay king</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">состояние птиц</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">это</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">флорист</a></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td className="tdUp">
-                                            <p align="center"><b>Остальное</b></p></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Reasons</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="tdLow">
-                                            <a href="../groups/idols.htm">Oakwood</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="transparent">Sunny Day</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            </tbody>
-
-                        </table>
+                        <BandsTable/>
                     </div>
 
                     <div
