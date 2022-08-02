@@ -55,10 +55,6 @@ h3{
   color: #FCF97AFF;
 }
 
-.transparent{
-  background-color: #ffffff;
-  opacity: .0;
-}
 a:link {
   color: #ffffff;
   text-decoration: none;
@@ -74,12 +70,4 @@ a:hover {
 a:active {
   color: #fcf97a;
   text-decoration: none;
-}
-
-ADDRESS {
-  color: #fff;
-  text-align: right;
-  margin-right: 20%;
-  padding-bottom: 15px;
-  font-size: 20px;
 }

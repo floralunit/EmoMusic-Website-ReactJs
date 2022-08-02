@@ -1,8 +1,18 @@
 .table{
-    margin-right: 10%;
-    margin-left: 10%;
+    display: table;
+    margin: 0 auto;
     font-family: Georgia;
 }
+div>table {
+    float: left;
+}
+@media (max-width: 1000px) {
+    div>table {
+        float: left;
+        margin-top: 5%;
+    }
+}
+/*Заголовок*/
 .tdUp{
     text-align: left;
     background: #FFFFFF;
@@ -12,7 +22,7 @@
     color: #000000;
     font-size: 14px;
 }
-
+/*Обычные ячейки*/
 .tdLow {
     text-align: left;
     background: #333333;
