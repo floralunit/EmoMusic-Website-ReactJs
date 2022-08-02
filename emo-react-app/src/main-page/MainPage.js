@@ -18,7 +18,7 @@ export function MainPage() {
                 So stay home ... and listen to emo music <br/>
             </h1>
             <h5>(and sometimes go 2 gigs)</h5>
-            <div className="container">
+            <div className="data">
                 <div className={"empty"}/>
                 <div className="bloc-tabs">
                     <button
@@ -92,6 +92,7 @@ export function MainPage() {
                     <div
                         className={toggleState === 3 ? "content  active-content" : "content"}
                     >
+                        <h4 style={{textAlign: 'center', marginBottom: '2vh'}}>Список будет пополняться...</h4>
                         <BandsTable/>
                     </div>
 

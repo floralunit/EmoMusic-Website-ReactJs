@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.mainPage {
+.mainPage, .bands {
   background-image: url("../main-page/background.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
@@ -12,6 +12,26 @@
   color: #fff;
   font-size: 16px;
   font-family: "Comic Sans MS";
+}
+.mainPage {
+  background-image: url("../main-page/background.jpg");
+}
+.bands {
+  background-image: url("../bands/back_band.jpeg");
+}
+.header {
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.7);
+  border-style: groove;
+  border-width: 2px;
+  padding: 20px;
+}
+#head{
+  font-family: "Arial Black", serif;
+  font-size: 25px;
+  color: #FCF97AFF;
 }
 .empty {
   height: 2.9vh;
@@ -24,7 +44,7 @@
     margin-top: 100px;
   }
 
-  .container {
+  .data {
     margin-right: 2%;
     margin-left: 2%;
     margin-top: 10px;

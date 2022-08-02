@@ -8,8 +8,9 @@ div>table {
 }
 @media (max-width: 1000px) {
     div>table {
-        float: left;
-        margin-top: 5%;
+        display: table;
+        margin: 5% 20%;
+        text-align: center;
     }
 }
 /*Заголовок*/
