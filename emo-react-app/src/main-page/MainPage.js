@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/App.css';
+import '../styles/tabs.css';
 
 export function MainPage() {
     const [toggleState, setToggleState] = useState(1);
@@ -9,36 +10,55 @@ export function MainPage() {
     };
     return (
         <div className="mainPage">
+            <div className={"empty"}/>
             <h1> That's life: it's so social <br/>
                 So physical <br/>
                 So emotional <br/>
                 So stay home ... and listen to emo music <br/>
             </h1>
+            <h5>(and sometimes go 2 gigs)</h5>
             <div className="container">
+                <div className={"empty"}/>
                 <div className="bloc-tabs">
                     <button
                         className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                         onClick={() => toggleTab(1)}
                     >
-                        О жанре
+                        <div className={"tabText"}>О сайте</div>
                     </button>
                     <button
                         className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                         onClick={() => toggleTab(2)}
                     >
-                        Группы
+                        <div className={"tabText"}>О жанре</div>
                     </button>
                     <button
                         className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
                         onClick={() => toggleTab(3)}
                     >
-                        Лейблы
+                        <div className={"tabText"}>Группы</div>
+                    </button>
+                    <button
+                        className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+                        onClick={() => toggleTab(4)}
+                    >
+                        <div className={"tabText"}> Лейблы </div>
                     </button>
                 </div>
-
+                <div className={"empty"}/>
                 <div className="content-tabs">
                     <div
                         className={toggleState === 1 ? "content  active-content" : "content"}
+                    >
+                            Добро пожаловать в мой веб архив по эмо музыке. Идея создать такой сайт связана с тем, что мне нравится
+                            не просто слушать музыку, но так же и вникать в тексты и изучать историю групп. В этом месте собраны эмо группы, которые
+                            мне больше всего понравились и затронули сердце. Создавать странички для них немного времязатратный процесс, поэтому все будет появляться постепенно.
+                            Скажу сразу, я не веб разработчик, не занимаюсь фронтендом профессионально, поэтому возможно, кому-то дизайн покажется не очень, но это здесь не главное :)
+                        <br/><br/>
+                        <div>Created by floral.unit</div>
+                    </div>
+                    <div
+                        className={toggleState === 2 ? "content  active-content" : "content"}
                     >
                         <div>
                             <h3> О жанре</h3>
@@ -69,7 +89,7 @@ export function MainPage() {
                     </div>
 
                     <div
-                        className={toggleState === 2 ? "content  active-content" : "content"}
+                        className={toggleState === 3 ? "content  active-content" : "content"}
                     >
                         <table className="table">
                             <tbody>
@@ -177,7 +197,7 @@ export function MainPage() {
                                     <tbody>
                                     <tr>
                                         <td className="tdUp">
-                                            <p align="center"><b>Разное</b></p></td>
+                                            <p align="center"><b>Остальное</b></p></td>
                                     </tr>
                                     <tr>
                                         <td className="tdLow">
@@ -208,14 +228,13 @@ export function MainPage() {
                     </div>
 
                     <div
-                        className={toggleState === 3 ? "content  active-content" : "content"}
+                        className={toggleState === 4 ? "content  active-content" : "content"}
                     >
                         <h3>Лейблы</h3>
+                        <div>Пока пусто...</div>
                     </div>
                 </div>
             </div>
-    <div>Created by floral.unit
-    </div>
 
 </div>
     );

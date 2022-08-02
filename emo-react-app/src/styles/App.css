@@ -5,7 +5,7 @@
 }
 
 .mainPage {
-  background-image: url("../MainPage/background.jpg");
+  background-image: url("../main-page/background.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
   min-height: 100vh;
@@ -13,7 +13,10 @@
   font-size: 16px;
   font-family: "Comic Sans MS";
 }
-
+.empty {
+  height: 2.9vh;
+  border: none;
+}
 @media (max-width: 480px) {
   h1 {
     margin-right: 2%;
@@ -35,6 +38,12 @@
 }
 
 h1 {
+  color: #fff;
+  margin-right: 20%;
+  margin-left: 20%;
+  line-height: 1;
+}
+h5 {
   color: #fff;
   margin-right: 20%;
   margin-left: 20%;
@@ -98,59 +107,4 @@ ADDRESS {
   margin-right: 20%;
   padding-bottom: 15px;
   font-size: 20px;
-}
-
-.container {
-  margin-right: 20%;
-  margin-left: 20%;
-  margin-top: 10px;
-  padding: 20px;
-  font-size: 16px;
-  text-align: justify;
-}
-
-.bloc-tabs {
-  display: flex;
-}
-
-.tabs {
-  padding: 15px;
-  text-align: center;
-  width: 50%;
-  background: #1f1f1f;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
-  box-sizing: content-box;
-  position: relative;
-  outline: none;
-
-}
-.tabs:not(:last-child){
-  border-right: 1px solid rgba(0, 0, 0, 0.274);
-}
-
-.active-tabs  { color: #fff; background: #404448; border-radius: 5px 5px 5px 5px; cursor: default; }
-
-.active-tabs::before { width: 32%; height: 25px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 16px; color: #fff; -webkit-user-select:none; user-select:none; cursor: pointer; }
-
-button {
-  border: none;
-}
-
-.content-tabs {
-  flex-grow : 1;
-}
-
-.content {
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background: rgba(0, 0, 0, 0.7);
-  border-style: groove;
-  border-width: 2px;
-}
-
-.active-content {
-  display: block;
 }
