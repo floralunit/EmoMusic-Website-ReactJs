@@ -1,7 +1,7 @@
 import './styles/App.css';
 import {BrowserRouter, Route,  Routes, Navigate} from 'react-router-dom';
-import {MainPage} from "./MainPage";
-import {BobTilton} from "./bands/bob-titlton/BobTilton";
+import {MainPage} from "./MainPage/MainPage";
+import {BobTilton} from "./bands/bob-tilton/BobTilton";
 
 function App() {
   return (

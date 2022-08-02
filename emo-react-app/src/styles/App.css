@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.mainPage {
+  background-image: url("../MainPage/background.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
   min-height: 100vh;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Comic Sans MS";
+}
+
+@media (max-width: 480px) {
+  h1 {
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 100px;
+  }
+
+  .container {
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 16px;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.7);
+    border-style: groove;
+    border-width: 2px;
+  }
+}
+
+h1 {
+  color: #fff;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+h2{
+  padding: 5px;
+}
+h3{
+  color: #FCF97AFF;
+}
+.tdUp{
+  text-align: left;
+  background: #FFFFFF;
+  width: 200px;
+  vertical-align: top;
+  font-family: Verdana, serif;
+  color: #000000;
+  font-size: 14px;
+}
+
+.tdLow {
+  text-align: left;
+  background: #333333;
+  width: 200px;
+  vertical-align: top;
+  font-family: Verdana, serif;
+  color: #000000;
+  font-size: 14px;
+}
+
+.table{
+  margin-right: 10%;
+  margin-left: 10%;
+  font-family: Georgia;
+}
+
+.transparent{
+  background-color: #ffffff;
+  opacity: .0;
+}
+a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fcf97a;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+a:active {
+  color: #fcf97a;
+  text-decoration: none;
+}
+
+ADDRESS {
+  color: #fff;
+  text-align: right;
+  margin-right: 20%;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.container {
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.bloc-tabs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tabs {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: #1f1f1f;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+
+}
+.tabs:not(:last-child){
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active-tabs  { color: #fff; background: #404448; border-radius: 5px 5px 5px 5px; cursor: default; }
+
+.active-tabs::before { width: 32%; height: 25px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 16px; color: #fff; -webkit-user-select:none; user-select:none; cursor: pointer; }
+
+button {
+  border: none;
+}
+
+.content-tabs {
+  flex-grow : 1;
+}
+
+.content {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  border-style: groove;
+  border-width: 2px;
+}
+
+.active-content {
+  display: block;
 }
