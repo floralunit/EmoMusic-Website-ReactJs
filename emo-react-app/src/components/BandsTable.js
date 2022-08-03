@@ -36,6 +36,21 @@ export function BandsTable() {
                         <NavLink to={"/sleeping-for-sunrise"}>Sleeping for Sunrise</NavLink>
                     </td>
                 </tr>
+                <tr>
+                    <td className="tdLow">
+                        <NavLink to={"/sleeping-for-sunrise"}>Neil Perry</NavLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td className="tdLow">
+                        <NavLink to={"/sleeping-for-sunrise"}>You And I</NavLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td className="tdLow">
+                        <NavLink to={"/sleeping-for-sunrise"}>Yaphet Kotto</NavLink>
+                    </td>
+                </tr>
                 </tbody>
             </table>
             <table>
@@ -108,7 +123,7 @@ export function BandsTable() {
                 <tbody>
                 <tr>
                     <td className="tdUp">
-                        <p align="center"><b>Остальное</b></p></td>
+                        <p align="center"><b>Не 90-е, не мидвест и не русское :p</b></p></td>
                 </tr>
                 <tr>
                     <td className="tdLow">

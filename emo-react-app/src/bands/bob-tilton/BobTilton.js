@@ -1,18 +1,24 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './bobtilton.css';
 import '../../styles/list.css';
 import '../../styles/columns.css';
 import AwesomeSlider from 'react-awesome-slider';
-import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
-import AnimationStyles from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import {SongLyrics} from "../../components/SongLyrics"
+import songsData from './songs.json';
 
 
 export function BobTilton() {
+    const [selectedSong, setSelectedSong] = useState(null);
+
     const [toggleState, setToggleState] = useState(1);
 
     const toggleTab = (index) => {
         setToggleState(index);
     };
+    const AutoplaySlider = withAutoplay(AwesomeSlider);
     return (
         <div className="bands">
             <a href="/"><div>Вернуться назад</div></a>
@@ -53,8 +59,8 @@ export function BobTilton() {
                             <div className={"Parent"}>
                                 <div className={"child1"}>
                                     <div>
+                                        <h3> Состав </h3>
                                         <ol className="rectangle">
-                                            <lh color="#FCF97AFF">Состав:</lh>
                                             <li>Simon Feirn-vocals</li>
                                             <li>Neil Johnson-guitar</li>
                                             <li>Chay Lawrence-guitar(1994-1998)</li>
@@ -65,16 +71,18 @@ export function BobTilton() {
                                     </div>
                                 </div>
                                 <div className={"child2"}>
-                                    <AwesomeSlider
-                                        animation="foldOutAnimation"
-                                        cssModule={[CoreStyles, AnimationStyles]}
+                                    <AutoplaySlider
+                                        play={true}
+                                        cancelOnInteraction={true} // should stop playing on user interaction
+                                        interval={2500}
+                                        animation="cubeAnimation"
                                     >
                                         <div data-src={require('./bobtilton1.jpg')} />
                                         <div data-src={require('./bobtilton2.jpg')} />
                                         <div data-src={require('./bobtilton3.jpg')} />
                                         <div data-src={require('./bobtilton4.jpg')} />
                                         <div data-src={require('./bobtilton5.jpg')} />
-                                    </AwesomeSlider>
+                                    </AutoplaySlider>
                                 </div>
                         </div>
                         <h3> Биография </h3>
@@ -118,14 +126,56 @@ export function BobTilton() {
                 <div
                     className={toggleState === 2 ? "content  active-content" : "content"}
                 >
-                    <ul type="circle">
-                        <lh><em>Дискография:</em><br/></lh>
-                        <li className="springtime">1994 - Wake Me When It's Springtime Again</li>
-                        <li className="penknife">1995 - Songs Of Penknife And Pocket Watch</li>
-                        <li className="crescent">1996 - Crescent</li>
-                        <li>1998 - Bob Tilton & Reiziger Split</li>
-                        <li className="hotels">1999 - the leading hotels or the world</li>
-                    </ul>
+                    <div>
+                            <div className={"Parent"}>
+                                <div className={"child1"}>
+                                    <h2>Songs List</h2>
+                                    <ul type="circle">
+                                        <lh><em>Дискография:</em><br/></lh>
+                                        <li >1994 - Wake Me When It's Springtime Again
+                                        <ul>
+                                            {songsData.filter(
+                                                item => (item.album||'').includes('Wake Me When')
+                                            ).map(u => (
+                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                            ))}
+                                        </ul>
+                                        </li>
+                                        <li className="crescent">1996 - Crescent
+                                            <ul>
+                                            {songsData.filter(
+                                                item => (item.album||'').includes('Crescent')
+                                            ).map(u => (
+                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                            ))}
+                                            </ul>
+                                        </li>
+                                        <li>1998 - Bob Tilton & Reiziger Split>
+                                            <ul>
+                                                {songsData.filter(
+                                                    item => (item.album||'').includes('Reiziger Split')
+                                                ).map(u => (
+                                                    <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                        <li className="hotels">1999 - the leading hotels or the world>
+                                            <ul>
+                                                {songsData.filter(
+                                                    item => (item.album||'').includes('the leading hotels')
+                                                ).map(u => (
+                                                    <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                ))}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className={"child2"}>
+                                    <h2>Lyrics</h2>
+                                    {selectedSong ? <SongLyrics song={selectedSong} /> : null}
+                                </div>
+                            </div>
+                    </div>
                 </div>
                 <div
                     className={toggleState === 3 ? "content  active-content" : "content"}
