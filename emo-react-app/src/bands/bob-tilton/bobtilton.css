@@ -1,34 +1,34 @@
 .crescent {
     list-style: none;
-    background: url(crescent.jpg) no-repeat 0 5px;
+    background: url(images/crescent.jpg) no-repeat 0 5px;
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;
 }
 .hotels {
     list-style: none;
-    background: url(hotels.jpg) no-repeat 0 5px;
+    background: url(images/hotels.jpg) no-repeat 0 5px;
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;
 }
 .penknife {
     list-style: none;
-    background: url(penknife.jpg) no-repeat 0 5px;
+    background: url(images/penknife.jpg) no-repeat 0 5px;
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;
 }
 .springtime {
     list-style: none;
-    background: url(springtime.jpg) no-repeat 0 5px;
+    background: url(images/springtime.jpg) no-repeat 0 5px;
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;
 }
 .reiziger {
     list-style: none;
-    background: url(reiziger.jpg) no-repeat 0 5px;
+    background: url(images/reiziger.jpg) no-repeat 0 5px;
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;

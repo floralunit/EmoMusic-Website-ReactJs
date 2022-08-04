@@ -7,18 +7,25 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import {SongLyrics} from "../../components/SongLyrics"
-import songsData from './songs.json';
+import songsData from './songs-lyrics.json';
 
 
 export function BobTilton() {
+
     const [selectedSong, setSelectedSong] = useState(null);
 
     const [toggleState, setToggleState] = useState(1);
-
     const toggleTab = (index) => {
         setToggleState(index);
     };
+
+    const [isShownSongs, setIsShownSongs] = useState(false);
+    const handleClickShowSongs = event => {
+        setIsShownSongs(current => !current);
+    };
+
     const AutoplaySlider = withAutoplay(AwesomeSlider);
+
     return (
         <div className="bands">
             <a href="/"><div>Вернуться назад</div></a>
@@ -26,7 +33,7 @@ export function BobTilton() {
                 <h id="head">Bob Tilton</h> <br/><hr/>
                 <b> Жанры: </b> emo, 90s emo, post-hardcore, british <br/>
                 <b> Годы активности: </b> 1993 – 1999 (6 лет) <br/>
-                <b> Место основания: </b> Mansfield, Nottinghamshire, England, Великобритания <br/>
+                <b> Место основания: </b> Nottingham, England <br/>
                 <b> Лейбл: </b> Subjugation records, Subjugatio records <br/>
             </div>
             <div className="data">
@@ -77,11 +84,11 @@ export function BobTilton() {
                                         interval={2500}
                                         animation="cubeAnimation"
                                     >
-                                        <div data-src={require('./bobtilton1.jpg')} />
-                                        <div data-src={require('./bobtilton2.jpg')} />
-                                        <div data-src={require('./bobtilton3.jpg')} />
-                                        <div data-src={require('./bobtilton4.jpg')} />
-                                        <div data-src={require('./bobtilton5.jpg')} />
+                                        <div data-src={require('./images/bobtilton1.jpg')} />
+                                        <div data-src={require('./images/bobtilton2.jpg')} />
+                                        <div data-src={require('./images/bobtilton3.jpg')} />
+                                        <div data-src={require('./images/bobtilton4.jpg')} />
+                                        <div data-src={require('./images/bobtilton5.jpg')} />
                                     </AutoplaySlider>
                                 </div>
                         </div>
@@ -129,44 +136,68 @@ export function BobTilton() {
                     <div>
                             <div className={"Parent"}>
                                 <div className={"child1"}>
-                                    <h2>Songs List</h2>
+                                    <h3>Дискография</h3>
+                                    Нажми на кнопку "Показать песни", чтобы открыть список песен каждого альбома. Нажми повторно, чтобы скрыть.
+                                    Нажми по песне, чтобы справа появился текст песни и мой перевод (если он есть).<br/>
+                                    <button onClick={handleClickShowSongs}>Показать песни</button>
                                     <ul type="circle">
-                                        <lh><em>Дискография:</em><br/></lh>
-                                        <li >1994 - Wake Me When It's Springtime Again
-                                        <ul>
-                                            {songsData.filter(
-                                                item => (item.album||'').includes('Wake Me When')
-                                            ).map(u => (
-                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                            ))}
-                                        </ul>
+                                        <li>...Wake Me When It's Springtime Again (1994)
+                                            {isShownSongs && (
+                                                <ol className="rectangle">
+                                                <div>
+                                                    {songsData.filter(
+                                                        item => (item.album||'').includes('1994')
+                                                    ).map(u => (
+                                                        <>
+                                                        <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                            <audio src={require(`./songs-data/${u.path}`)} controls="autoplay"/>
+                                                        </>
+                                                    ))}
+                                                </div>
+                                                </ol>
+                                            )}
                                         </li>
-                                        <li className="crescent">1996 - Crescent
-                                            <ul>
-                                            {songsData.filter(
-                                                item => (item.album||'').includes('Crescent')
-                                            ).map(u => (
-                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                            ))}
-                                            </ul>
+                                        <li>Songs Of Penknife And Pocket Watch (1995)
+                                                {isShownSongs && (
+                                                    <div>
+                                                        <ol className="rectangle">
+                                                        {songsData.filter(
+                                                            item => (item.album||'').includes('1995')
+                                                        ).map(u => (
+                                                            <>
+                                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                                <audio src={require(`./songs-data/${u.path}`)} controls="autoplay"/>
+                                                            </>
+                                                        ))}
+                                                        </ol>
+                                                    </div>
+                                                )}
                                         </li>
-                                        <li>1998 - Bob Tilton & Reiziger Split>
-                                            <ul>
-                                                {songsData.filter(
-                                                    item => (item.album||'').includes('Reiziger Split')
-                                                ).map(u => (
-                                                    <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                                ))}
-                                            </ul>
+                                        <li>Crescent (1996)
+                                                {isShownSongs && (
+                                                    <div>
+                                                        <ol className="rectangle">
+                                                        {songsData.filter(
+                                                            item => (item.album||'').includes('1996')
+                                                        ).map(u => (
+                                                            <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                        ))}
+                                                        </ol>
+                                                    </div>
+                                                )}
                                         </li>
-                                        <li className="hotels">1999 - the leading hotels or the world>
-                                            <ul>
-                                                {songsData.filter(
-                                                    item => (item.album||'').includes('the leading hotels')
-                                                ).map(u => (
-                                                    <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                                ))}
-                                            </ul>
+                                        <li>The Leading Hotels of the World (1999)
+                                                {isShownSongs && (
+                                                    <div>
+                                                        <ol className="rectangle">
+                                                        {songsData.filter(
+                                                            item => (item.album||'').includes('1999')
+                                                        ).map(u => (
+                                                            <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                        ))}
+                                                        </ol>
+                                                    </div>
+                                                )}
                                         </li>
                                     </ul>
                                 </div>

@@ -123,7 +123,7 @@ export function BandsTable() {
                 <tbody>
                 <tr>
                     <td className="tdUp">
-                        <p align="center"><b>Не 90-е, не мидвест и не русское :p</b></p></td>
+                        <p align="center"><b>Остальное</b></p></td>
                 </tr>
                 <tr>
                     <td className="tdLow">
