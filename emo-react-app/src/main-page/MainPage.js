@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/App.css';
-import '../styles/tabs.css';
+import '../styles/tabs.scss';
 import {BandsTable} from "../components/BandsTable";
 
 export function MainPage() {
@@ -20,33 +20,22 @@ export function MainPage() {
             <h5>(and sometimes go 2 gigs)</h5>
             <div className="data">
                 <div className={"empty"}/>
-                <div className="bloc-tabs">
-                    <button
-                        className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(1)}
-                    >
-                        <div className={"tabText"}>О сайте</div>
-                    </button>
-                    <button
-                        className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(2)}
-                    >
-                        <div className={"tabText"}>О жанре</div>
-                    </button>
-                    <button
-                        className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(3)}
-                    >
-                        <div className={"tabText"}>Группы</div>
-                    </button>
-                    <button
-                        className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(4)}
-                    >
-                        <div className={"tabText"}> Лейблы </div>
-                    </button>
+                <div className="tab-bar radius">
+                    <a className={toggleState === 1 ? "tab selected" : "tab"} onClick={() => toggleTab(1)} data-text="О группе">
+                        <span className="icon">О сайте</span>
+                    </a>
+                    <a className={toggleState === 2 ? "tab selected" : "tab"} onClick={() => toggleTab(2)} data-text="Дискография">
+                        <span className="icon">О жанре</span>
+                    </a>
+                    <a className={toggleState === 3 ? "tab selected" : "tab"} onClick={() => toggleTab(3)} data-text="Видосы">
+                        <span className="icon">Группы</span>
+                    </a>
+                    <a className={toggleState === 4 ? "tab selected" : "tab"} onClick={() => toggleTab(4)} data-text="Видосы">
+                        <span className="icon">Лейблы</span>
+                    </a>
                 </div>
                 <div className={"empty"}/>
+                <div className={"blackback"}>
                 <div className="content-tabs">
                     <div
                         className={toggleState === 1 ? "content  active-content" : "content"}
@@ -56,6 +45,7 @@ export function MainPage() {
                             мне больше всего понравились и затронули сердце. Создавать странички для них немного времязатратный процесс, поэтому все будет появляться постепенно.
                             Скажу сразу, я не занимаюсь фронтендом профессионально, поэтому возможно, кому-то интерфейс покажется всратым, но это здесь не главное :)
                         <br/><br/>
+                        <img src={'https://dannarchy.com/misc/anim/myskull.gif'}/>
                         <div>Если есть какие-то пожелания (добавить какие-то группы) или у вас есть крутая инфа или видосы,
                         да или если вы просто нашли баги, то можете написать мне:
                         @floralunit</div>
@@ -104,6 +94,7 @@ export function MainPage() {
                         <h3>Лейблы</h3>
                         <div>Пока пусто...</div>
                     </div>
+                </div>
                 </div>
             </div>
 

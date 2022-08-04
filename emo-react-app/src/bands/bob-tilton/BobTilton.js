@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './bobtilton.css';
 import '../../styles/list.css';
 import '../../styles/columns.css';
+import '../../styles/audio.css';
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
@@ -23,6 +24,10 @@ export function BobTilton() {
     const handleClickShowSongs = event => {
         setIsShownSongs(current => !current);
     };
+    const [isShownSongs2, setIsShownSongs2] = useState(false);
+    const handleClickShowSongs2 = event => {
+        setIsShownSongs2(current => !current);
+    };
 
     const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -38,27 +43,19 @@ export function BobTilton() {
             </div>
             <div className="data">
                 <div className={"empty"}/>
-                <div className="bloc-tabs">
-                    <button
-                        className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(1)}
-                    >
-                        <div className={"tabText"}>О группе</div>
-                    </button>
-                    <button
-                        className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(2)}
-                    >
-                        <div className={"tabText"}>Дискография</div>
-                    </button>
-                    <button
-                        className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(3)}
-                    >
-                        <div className={"tabText"}>Видосы</div>
-                    </button>
+                <div className="tab-bar radius">
+                    <a className={toggleState === 1 ? "tab selected" : "tab"} onClick={() => toggleTab(1)} data-text="О группе">
+                        <span className="icon">О группе</span>
+                    </a>
+                    <a className={toggleState === 2 ? "tab selected" : "tab"} onClick={() => toggleTab(2)} data-text="Дискография">
+                        <span className="icon">Дискография</span>
+                    </a>
+                    <a className={toggleState === 3 ? "tab selected" : "tab"} onClick={() => toggleTab(3)} data-text="Видосы">
+                        <span className="icon">Видосы</span>
+                    </a>
                 </div>
                 <div className={"empty"}/>
+                <div className={"blackback"}>
                 <div className="content-tabs">
                     <div
                         className={toggleState === 1 ? "content  active-content" : "content"}
@@ -137,11 +134,10 @@ export function BobTilton() {
                             <div className={"Parent"}>
                                 <div className={"child1"}>
                                     <h3>Дискография</h3>
-                                    Нажми на кнопку "Показать песни", чтобы открыть список песен каждого альбома. Нажми повторно, чтобы скрыть.
-                                    Нажми по песне, чтобы справа появился текст песни и мой перевод (если он есть).<br/>
-                                    <button onClick={handleClickShowSongs}>Показать песни</button>
+                                    ! Нажми по альбому, чтобы открыть список песен.
+                                    Нажми по песне, чтобы справа появился сам трек, текст песни (если он есть) и мой перевод (если он есть).<br/>
                                     <ul type="circle">
-                                        <li>...Wake Me When It's Springtime Again (1994)
+                                        <l><div onClick={handleClickShowSongs} className={'crescent'}>...Wake Me When It's Springtime Again (1994)</div>
                                             {isShownSongs && (
                                                 <ol className="rectangle">
                                                 <div>
@@ -150,15 +146,15 @@ export function BobTilton() {
                                                     ).map(u => (
                                                         <>
                                                         <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                                            <audio src={require(`./songs-data/${u.path}`)} controls="autoplay"/>
                                                         </>
                                                     ))}
                                                 </div>
                                                 </ol>
                                             )}
-                                        </li>
+                                        </l>
                                         <li>Songs Of Penknife And Pocket Watch (1995)
-                                                {isShownSongs && (
+                                            <button onClick={handleClickShowSongs2}>Показать песни</button>
+                                                {isShownSongs2 && (
                                                     <div>
                                                         <ol className="rectangle">
                                                         {songsData.filter(
@@ -202,7 +198,6 @@ export function BobTilton() {
                                     </ul>
                                 </div>
                                 <div className={"child2"}>
-                                    <h2>Lyrics</h2>
                                     {selectedSong ? <SongLyrics song={selectedSong} /> : null}
                                 </div>
                             </div>
@@ -213,6 +208,7 @@ export function BobTilton() {
                 >
                     <h4 style={{textAlign: 'center', marginBottom: '2vh'}}>Эх...</h4>
                 </div>
+            </div>
             </div>
         </div>
                 );
