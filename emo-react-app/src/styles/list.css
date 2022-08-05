@@ -1,9 +1,9 @@
 .rectangle {
     counter-reset: li;
     list-style: none;
-    font: 14px "Trebuchet MS", "Lucida Sans";
+    font-size: 14px;
     padding: 0 2vh;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+/*    text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
 }
 .rectangle li {
     position: relative;

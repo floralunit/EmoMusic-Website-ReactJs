@@ -1,7 +1,7 @@
 .table{
     display: table;
     margin: 0 auto;
-    font-family: Georgia;
+    font-family: Georgia, serif;
 }
 div>table {
     float: left;

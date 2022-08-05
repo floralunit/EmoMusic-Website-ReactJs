@@ -63,6 +63,7 @@ $selected-bg: rgba(0,0,0,0.4);
     align-items: center;
     position: relative;
     transition: all $time;
+    font-family: "Comic Sans MS", serif;
 
     &::before {
       position: absolute;
@@ -87,7 +88,7 @@ $selected-bg: rgba(0,0,0,0.4);
 
     &:hover::before {
       opacity: 1;
-      bottom: 0px;
+      bottom: 0;
     }
 
 
@@ -109,7 +110,7 @@ $selected-bg: rgba(0,0,0,0.4);
       }
       &::before {
         opacity: 1;
-        bottom: 0px;
+        bottom: 0;
       }
       padding-top: 10px;
       padding-bottom: 10px;
@@ -156,4 +157,7 @@ $selected-bg: rgba(0,0,0,0.4);
   background: rgba(0, 0, 0, 0.7);
   border-style: groove;
   border-width: 2px;
+}
+button {
+  border: none;
 }
