@@ -92,3 +92,13 @@ a:active {
   color: #fcf97a;
   text-decoration: none;
 }
+
+.albumList {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+.albumList:hover{
+  transform: scale(1.1);
+}

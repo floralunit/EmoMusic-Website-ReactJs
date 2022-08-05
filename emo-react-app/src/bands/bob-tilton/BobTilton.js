@@ -7,6 +7,9 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import { FiChevronDown } from 'react-icons/fi';
+import { FiChevronUp } from 'react-icons/fi';
+import {BsExclamationLg} from 'react-icons/bs';
 import {SongLyrics} from "../../components/SongLyrics"
 import songsData from './songs-lyrics.json';
 
@@ -20,13 +23,29 @@ export function BobTilton() {
         setToggleState(index);
     };
 
-    const [isShownSongs, setIsShownSongs] = useState(false);
-    const handleClickShowSongs = event => {
-        setIsShownSongs(current => !current);
+    const [isShownSongs1, setIsShownSongs1] = useState(false);
+    const [open1, setOpen1] = useState(false);
+    const handleClickShowSongs1 = event => {
+        setIsShownSongs1(current => !current);
+        setOpen1(open =>!open);
     };
     const [isShownSongs2, setIsShownSongs2] = useState(false);
+    const [open2, setOpen2] = useState(false);
     const handleClickShowSongs2 = event => {
         setIsShownSongs2(current => !current);
+        setOpen2(open =>!open);
+    };
+    const [isShownSongs3, setIsShownSongs3] = useState(false);
+    const [open3, setOpen3] = useState(false);
+    const handleClickShowSongs3 = event => {
+        setIsShownSongs3(current => !current);
+        setOpen3(open =>!open);
+    };
+    const [isShownSongs4, setIsShownSongs4] = useState(false);
+    const [open4, setOpen4] = useState(false);
+    const handleClickShowSongs4 = event => {
+        setIsShownSongs4(current => !current);
+        setOpen4(open =>!open);
     };
 
     const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -134,11 +153,17 @@ export function BobTilton() {
                             <div className={"Parent"}>
                                 <div className={"child1"}>
                                     <h3>Дискография</h3>
-                                    ! Нажми по альбому, чтобы открыть список песен.
-                                    Нажми по песне, чтобы справа появился сам трек, текст песни (если он есть) и мой перевод (если он есть).<br/>
-                                    <ul type="circle">
-                                        <l><div onClick={handleClickShowSongs} className={'crescent'}>...Wake Me When It's Springtime Again (1994)</div>
-                                            {isShownSongs && (
+                                    <br/>
+                                    <div style={{border: '1px solid #FFFFFF', padding: '5px'}}>
+                                        Нажми по альбому, чтобы открыть список песен.
+                                        Нажми по песне, чтобы справа появился сам трек, текст песни (если он есть) и мой перевод (если он есть).
+                                        <br/>
+                                        <img src={'https://cinni.net/images/creatures/sanrio/maru_jump_rope.gif'} style={{display: 'block', margin: '0 auto'}}/>
+                                    </div>
+                                    <br/>
+                                    <ul type="none">
+                                        <li><div onClick={handleClickShowSongs1} className={'albumList'}><img src={require('./images/springtime.jpg')} style={{width: "50px", margin: '5px'}}/> ...Wake Me When It's Springtime Again (1994) { open1 ? <FiChevronUp/> : <FiChevronDown/> }</div>
+                                            {isShownSongs1 && (
                                                 <ol className="rectangle">
                                                 <div>
                                                     {songsData.filter(
@@ -151,49 +176,51 @@ export function BobTilton() {
                                                 </div>
                                                 </ol>
                                             )}
-                                        </l>
-                                        <li>Songs Of Penknife And Pocket Watch (1995)
-                                            <button onClick={handleClickShowSongs2}>Показать песни</button>
-                                                {isShownSongs2 && (
+                                        </li>
+                                        <li><div onClick={handleClickShowSongs2} className={'albumList'}><img src={require('./images/penknife.jpg')} style={{width: "50px", margin: '5px'}}/>Songs Of Penknife And Pocket Watch (1995) { open2 ? <FiChevronUp/> : <FiChevronDown/> }</div>
+                                            {isShownSongs2 && (
+                                                <ol className="rectangle">
                                                     <div>
-                                                        <ol className="rectangle">
                                                         {songsData.filter(
                                                             item => (item.album||'').includes('1995')
                                                         ).map(u => (
                                                             <>
                                                                 <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
-                                                                <audio src={require(`./songs-data/${u.path}`)} controls="autoplay"/>
                                                             </>
                                                         ))}
-                                                        </ol>
                                                     </div>
-                                                )}
+                                                </ol>
+                                            )}
                                         </li>
-                                        <li>Crescent (1996)
-                                                {isShownSongs && (
+                                        <li><div onClick={handleClickShowSongs3} className={'albumList'}><img src={require('./images/crescent.jpg')} style={{width: "50px", margin: '5px'}}/>Crescent (1996) { open3 ? <FiChevronUp/> : <FiChevronDown/> }</div>
+                                            {isShownSongs3 && (
+                                                <ol className="rectangle">
                                                     <div>
-                                                        <ol className="rectangle">
                                                         {songsData.filter(
                                                             item => (item.album||'').includes('1996')
                                                         ).map(u => (
-                                                            <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                            <>
+                                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                            </>
                                                         ))}
-                                                        </ol>
                                                     </div>
-                                                )}
+                                                </ol>
+                                            )}
                                         </li>
-                                        <li>The Leading Hotels of the World (1999)
-                                                {isShownSongs && (
+                                        <li><div onClick={handleClickShowSongs4} className={'albumList'}><img src={require('./images/hotels.jpg')} style={{width: "50px", margin: '5px'}}/>The Leading Hotels of the World (1999) { open4 ? <FiChevronUp/> : <FiChevronDown/> }</div>
+                                            {isShownSongs4 && (
+                                                <ol className="rectangle">
                                                     <div>
-                                                        <ol className="rectangle">
                                                         {songsData.filter(
                                                             item => (item.album||'').includes('1999')
                                                         ).map(u => (
-                                                            <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                            <>
+                                                                <li key={u.key} onClick={() => setSelectedSong(u)}>{u.name}</li>
+                                                            </>
                                                         ))}
-                                                        </ol>
                                                     </div>
-                                                )}
+                                                </ol>
+                                            )}
                                         </li>
                                     </ul>
                                 </div>

@@ -4,6 +4,10 @@
     background-size: contain;
     padding-left: 40px;
     line-height: 2em;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s ease-out;
 }
 .hotels {
     list-style: none;

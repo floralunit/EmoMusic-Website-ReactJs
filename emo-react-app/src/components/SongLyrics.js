@@ -20,13 +20,15 @@ export const SongLyrics = ({ song }) => {
             {song && (
                 <>
                     <div>
+                    <h3 className={'albumList'}>
+                        <img src={'https://dannarchy.com/misc/anim/1366.gif'}/>
+                         {song.name}
+                    </h3>
                         {song.artist}
                     </div>
-                    <div>
-                        {song.name}
-                    </div>
+                    <br/>
                     <audio src={require(`../bands/${song.path}`)} controls="autoplay" className={"audio"} autoPlay={false} title={song.name}/>
-
+                    <br/>
                     <div className="tab-bar radius" style={{fontSize: '5px'}}>
                         <a className={toggleState === 1 ? "tab selected" : "tab"} onClick={() => toggleTab(1)} data-text="О группе">
                             <span className="icon">Текст</span>
