@@ -1,0 +1,46 @@
+.rectangle {
+    counter-reset: li;
+    list-style: none;
+    font-size: 14px;
+    padding: 0 2vh;
+/*    text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+}
+.rectangle li {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    margin: .5em 0 .5em 2.5em;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+.rectangle li:hover {text-decoration: underline}
+.rectangle li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    border: 1px solid #FFFFFF;
+    color: white;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.rectangle li:after {
+    position: absolute;
+    content: "";
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;
+}
+.rectangle li:hover:after {
+    left: -.5em;
+    border-left-color: #FFFFFF;
+}

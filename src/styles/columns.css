@@ -1,0 +1,25 @@
+/*@media (max-width: 480px) {
+    .Parent {
+    }
+
+    .child1 {
+        padding: 20px;
+    }
+
+    .child2 {
+        padding: 20px;
+    }
+}*/
+.Parent {
+    display: flex;
+    flex-direction: row;
+}
+
+.child1 {
+    width: 50%;
+}
+
+.child2 {
+    width: 50%;
+    padding: 20px;
+}

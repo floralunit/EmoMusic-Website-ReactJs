@@ -1,0 +1,104 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage, .bands {
+  background-image: url("../main-page/background.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Comic Sans MS", serif;
+}
+.mainPage {
+  background-image: url("../main-page/background.jpg");
+}
+.bands {
+  background-image: url("../bands/back_band.jpeg");
+/*  background-image: url("https://fauux.neocities.org/LainLove.gif");*/
+}
+.header {
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.7);
+  border-style: groove;
+  border-width: 2px;
+  padding: 20px;
+}
+#head{
+  font-family: "Arial Black", serif;
+  font-size: 25px;
+  color: #FCF97AFF;
+}
+.empty {
+  height: 2.9vh;
+  border: none;
+}
+@media (max-width: 480px) {
+  h1 {
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 100px;
+  }
+
+  .data {
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 16px;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.7);
+    border-style: groove;
+    border-width: 2px;
+  }
+}
+
+h1 {
+  color: #fff;
+  margin-right: 20%;
+  margin-left: 20%;
+  line-height: 1;
+}
+h5 {
+  color: #fff;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+h2{
+  padding: 5px;
+}
+h3{
+  color: #FCF97AFF;
+}
+
+a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fcf97a;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+a:active {
+  color: #fcf97a;
+  text-decoration: none;
+}
+
+.albumList {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+.albumList:hover{
+  transform: scale(1.1);
+}
