@@ -5,7 +5,7 @@
 }
 
 .mainPage, .bands {
-  background-image: url("../main-page/background.jpg");
+  background-image: url("../main-page/images/background.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
   min-height: 100vh;
@@ -14,7 +14,7 @@
   font-family: "Comic Sans MS", serif;
 }
 .mainPage {
-  background-image: url("../main-page/background.jpg");
+  background-image: url("../main-page/images/background.jpg");
 }
 .bands {
   background-image: url("../bands/back_band.jpeg");
@@ -46,7 +46,11 @@
   height: 2.9vh;
   border: none;
 }
-
+.back-link {
+  margin-right: 20%;
+  margin-left: 20%;
+  font-size: 14px;
+}
 h1 {
   color: #fff;
   margin-right: 20%;
@@ -108,5 +112,10 @@ a:active {
   .header {
     margin-right: 10%;
     margin-left: 10%;
+  }
+  .back-link {
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 18px;
   }
 }

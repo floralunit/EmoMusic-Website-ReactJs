@@ -5,8 +5,10 @@ import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import {FiChevronDown} from 'react-icons/fi';
 import {FiChevronUp} from 'react-icons/fi';
+import {TbArrowBackUp} from 'react-icons/tb';
 import {SongLyrics} from "../../components/SongLyrics"
 import songsData from './songs-lyrics.json';
+import {NavLink} from "react-router-dom";
 
 
 export function BobTilton() {
@@ -47,9 +49,9 @@ export function BobTilton() {
 
     return (
         <div className="bands">
-            <a href="/">
-                <div>Вернуться назад</div>
-            </a>
+            <br/>
+            <NavLink to={"/"} className={'back-link'} style={{color: '#ffffff'}}><TbArrowBackUp/>Вернуться назад</NavLink>
+            <br/><br/>
             <div className="header">
                 <h id="head">Bob Tilton</h>
                 <br/>
@@ -99,7 +101,7 @@ export function BobTilton() {
                                     <AutoplaySlider
                                         play={true}
                                         cancelOnInteraction={true} // should stop playing on user interaction
-                                        interval={2500}
+                                        interval={2000}
                                         animation="cubeAnimation"
                                     >
                                         <div data-src={require('./images/bobtilton1.jpg')}/>
