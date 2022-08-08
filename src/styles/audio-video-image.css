@@ -25,3 +25,15 @@
     display: block;
     margin: 2px auto;
 }
+
+.instrument-image
+{
+    width: 30px;
+}
+
+@media (max-width: 1000px) {
+    .instrument-image
+    {
+        width: 20px;
+    }
+}

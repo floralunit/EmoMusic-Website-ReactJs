@@ -86,12 +86,12 @@ export function BobTilton() {
                                     <div>
                                         <h3> Состав </h3>
                                         <ol className="rectangle">
-                                            <li> <img src={require('../instruments-images/singer.png')} style={{width: '25px'}} alt={''}/> Simon Feirn</li>
-                                            <li> <img src={require('../instruments-images/guitar.png')} style={{width: '30px'}} alt={''}/> Neil Johnson</li>
-                                            <li> <img src={require('../instruments-images/guitar.png')} style={{width: '30px'}} alt={''}/>(1994-1998) Chay Lawrence</li>
-                                            <li> <img src={require('../instruments-images/guitar.png')} style={{width: '30px'}} alt={''}/>(1994-1998) Ralph Hamilton</li>
-                                            <li> <img src={require('../instruments-images/bass-guitar.png')} style={{width: '30px'}} alt={''}/> Mark Simms</li>
-                                            <li> <img src={require('../instruments-images/drums.png')} style={{width: '30px'}} alt={''}/> Alan Gainey</li>
+                                            <li> <img src={require('../instruments-images/singer.png')} className={'instrument-image'} alt={''}/> Simon Feirn</li>
+                                            <li> <img src={require('../instruments-images/guitar.png')} className={'instrument-image'} alt={''}/> Neil Johnson</li>
+                                            <li> <img src={require('../instruments-images/guitar.png')} className={'instrument-image'} alt={''}/>(1994-1998) Chay Lawrence</li>
+                                            <li> <img src={require('../instruments-images/guitar.png')} className={'instrument-image'} alt={''}/>(1994-1998) Ralph Hamilton</li>
+                                            <li> <img src={require('../instruments-images/bass-guitar.png')} className={'instrument-image'} alt={''}/> Mark Simms</li>
+                                            <li> <img src={require('../instruments-images/drums.png')} className={'instrument-image'} alt={''}/> Alan Gainey</li>
                                         </ol>
                                     </div>
                                 </div>
@@ -263,6 +263,7 @@ export function BobTilton() {
                     </div>
                 </div>
             </div>
+            <br/><br/>
         </div>
     );
 }

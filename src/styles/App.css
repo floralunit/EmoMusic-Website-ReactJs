@@ -20,6 +20,14 @@
   background-image: url("../bands/back_band.jpeg");
 /*  background-image: url("https://fauux.neocities.org/LainLove.gif");*/
 }
+.data {
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: justify;
+}
+
 .header {
   margin-right: 20%;
   margin-left: 20%;
@@ -37,25 +45,6 @@
 .empty {
   height: 2.9vh;
   border: none;
-}
-@media (max-width: 480px) {
-  h1 {
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-top: 100px;
-  }
-
-  .data {
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-top: 10px;
-    padding: 20px;
-    font-size: 16px;
-    text-align: justify;
-    background: rgba(0, 0, 0, 0.7);
-    border-style: groove;
-    border-width: 2px;
-  }
 }
 
 h1 {
@@ -101,4 +90,23 @@ a:active {
 }
 .albumList:hover{
   transform: scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  h5 {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .data {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .header {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
 }

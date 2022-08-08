@@ -3,7 +3,7 @@ import '../styles/App.css';
 import '../styles/tabs.scss';
 import '../styles/list.css';
 import '../styles/columns.css';
-import '../styles/audio-video.css';
+import '../styles/audio-video-image.css';
 import {BandsTable} from "../components/BandsTable";
 
 export function MainPage() {
@@ -134,7 +134,7 @@ export function MainPage() {
                     </div>
                 </div>
             </div>
-
+            <br/><br/>
         </div>
     );
 }

@@ -49,7 +49,6 @@ $selected-bg: rgba(0,0,0,0.4);
   align-items: center;
   cursor: pointer;
 
-
   .tab {
     box-sizing: border-box;
     text-decoration: none;
@@ -97,7 +96,7 @@ $selected-bg: rgba(0,0,0,0.4);
         opacity: 1;
         top: 3px;
       }
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
 
     &.selected {
@@ -145,14 +144,6 @@ $selected-bg: rgba(0,0,0,0.4);
   display: block;
 }
 
-.data {
-  margin-right: 20%;
-  margin-left: 20%;
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: justify;
-}
-
 .blackback {
   background: rgba(0, 0, 0, 0.7);
   border-style: groove;
@@ -160,4 +151,10 @@ $selected-bg: rgba(0,0,0,0.4);
 }
 button {
   border: none;
+}
+
+@media (max-width: 1000px) {
+  .tab {
+    height: 60px;
+  }
 }

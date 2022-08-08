@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 
 export function BandsTable() {
     return (
+        <div className="table-view">
         <div className="table">
             <table>
                 <tbody>
@@ -137,6 +138,7 @@ export function BandsTable() {
                 </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     );
 }

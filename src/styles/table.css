@@ -2,16 +2,10 @@
     display: table;
     margin: 0 auto;
     font-family: Georgia, serif;
+    font-size: 14px;
 }
 div>table {
     float: left;
-}
-@media (max-width: 1000px) {
-    div>table {
-        display: table;
-        margin: 5% 20%;
-        text-align: center;
-    }
 }
 /*Заголовок*/
 .tdUp{
@@ -21,7 +15,6 @@ div>table {
     vertical-align: top;
     font-family: Verdana, serif;
     color: #000000;
-    font-size: 14px;
 }
 /*Обычные ячейки*/
 .tdLow {
@@ -31,5 +24,30 @@ div>table {
     vertical-align: top;
     font-family: Verdana, serif;
     color: #000000;
-    font-size: 14px;
+}
+@media (max-width: 1400px) {
+    .table-view{
+        position: relative;
+    }
+    .table{
+        width: 400px;
+        margin:0 auto;
+        text-align: center;
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    div>table {
+        margin-bottom: 5%;
+        font-size: 20px;
+    }
+    /*Заголовок*/
+    .tdUp{
+        width: 400px;
+    }
+    /*Обычные ячейки*/
+    .tdLow {
+        width: 400px;
+    }
 }

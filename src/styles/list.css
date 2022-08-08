@@ -2,8 +2,17 @@
     counter-reset: li;
     list-style: none;
     font-size: 14px;
-    padding: 0 2vh;
+    padding: 0 1vh;
 /*    text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+}
+@media (max-width: 1000px) {
+    .rectangle {
+        counter-reset: li;
+        list-style: none;
+        font-size: 14px;
+        padding: 0 1vh;
+        /*    text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+    }
 }
 .rectangle li {
     position: relative;
